@@ -9,6 +9,7 @@ VERSION:	Versoin Number
 -------------------------------------------------------------------*/
 /*  typography */
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
 @font-face {
   font-family: 'futura-bold';
   src: url("../fonts/Futura-Bold.woff") format("woff");
@@ -373,6 +374,7 @@ textarea.form-control {
       color: #5c5c77; }
 
 .content * {
+  font-family: 'PT Serif', serif;
   margin-bottom: 20px; }
 
 .content a {
