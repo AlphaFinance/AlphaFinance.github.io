@@ -280,42 +280,6 @@
     </item>
     
     <item>
-      <title>Clark Malik</title>
-      <link>https://AlphaFinance.github.io/teacher/clark-malik/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/teacher/clark-malik/</guid>
-      <description>About Me Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Devid Luis</title>
-      <link>https://AlphaFinance.github.io/teacher/devid-luis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/teacher/devid-luis/</guid>
-      <description>About Me Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Duis Rio</title>
-      <link>https://AlphaFinance.github.io/teacher/duis-rio/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/teacher/duis-rio/</guid>
-      <description>About Me Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Jacke Mastio</title>
-      <link>https://AlphaFinance.github.io/teacher/jacke-mastio/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/teacher/jacke-mastio/</guid>
-      <description>About Me Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
       <title>John doe</title>
       <link>https://AlphaFinance.github.io/author/john-doe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -326,10 +290,10 @@
     
     <item>
       <title>KB</title>
-      <link>https://AlphaFinance.github.io/teacher/alex-rook/</link>
+      <link>https://AlphaFinance.github.io/teacher/kb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://AlphaFinance.github.io/teacher/alex-rook/</guid>
+      <guid>https://AlphaFinance.github.io/teacher/kb/</guid>
       <description>About Me Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
     </item>
     
@@ -340,15 +304,6 @@
       
       <guid>https://AlphaFinance.github.io/author/mark-dinn/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet vulputate augue.</description>
-    </item>
-    
-    <item>
-      <title>Zim Cook</title>
-      <link>https://AlphaFinance.github.io/teacher/zim-cook/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/teacher/zim-cook/</guid>
-      <description>About Me Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
     </item>
     
   </channel>
