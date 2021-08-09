@@ -6,7 +6,7 @@
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description"
-    content="使用Hugo快速架站 &amp; 設定Google Analytics">
+    content="Hugo快速架站 &amp; Google服務">
   
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Hugo 0.83.1" />
@@ -151,7 +151,7 @@
           <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
           <li class="list-inline-item text-white h3 font-secondary">如何架設個人網站</li>
         </ul>
-        <p class="text-lighten">使用Hugo快速架站 &amp; 設定Google Analytics</p>
+        <p class="text-lighten">Hugo快速架站 &amp; Google服務</p>
       </div>
     </div>
   </div>
@@ -216,7 +216,6 @@
     <div class="row">
       <div class="col-12 mb-4 content">
         <h3 id="前言">前言</h3>
-<hr>
 <h5 id="相信很多人都想透過部落格的方式將知識寫成一篇篇的文章方便瀏覽其中不外乎是使用mediumwixbloggerwordpress等來架設網站或設計版面而我自己是使用medium來撰寫文章但使用到後期發現無法滿足個人高自由度的需求xd">相信很多人都想透過部落格的方式將知識寫成一篇篇的文章方便瀏覽，其中不外乎是使用Medium、Wix、Blogger、Wordpress等來架設網站或設計版面，而我自己是使用Medium來撰寫文章，但使用到後期發現無法滿足個人高自由度的需求XD!</h5>
 <p>.</p>
 <h5 id="首先是版面配置medium在更新之後就無法免費調整文章版面配置結果我的medium看起來就像是新聞網站完全無美感而言">首先是版面配置，Medium在更新之後就無法免費調整文章版面配置，結果我的Medium看起來就像是新聞網站完全無美感而言!</h5>
@@ -224,7 +223,18 @@
 <p><img src="/images/courses/hahow-hugo.png" alt=""></p>
 <h5 id="首先我點選學員作業發現網站的完成度很高再加上版面配置自由度非常高我就決定手刀買這堂cp值超高的課程囉">首先我點選學員作業發現網站的完成度很高，再加上版面配置自由度非常高，我就決定手刀買這堂CP值超高的課程囉!!</h5>
 <hr>
-<h3 id="一選擇網站版面">《一》選擇網站版面</h3>
+<h3 id="目錄">目錄</h3>
+<pre><code>《一》設定網站版面
+
+《二》本地端運行網站
+
+《三》客制化網站
+
+《四》部署線上網頁
+
+《五》使用Google功能
+</code></pre><hr>
+<h3 id="一設定網站版面">《一》設定網站版面</h3>
 <h5 id="1進入hugo官網httpsgohugoio---點選themes--選擇網站版面--下載zip檔">1.進入<a href="https://gohugo.io/">Hugo官網</a>  ➨ 點選<code>Themes</code> ➨ 選擇網站版面 ➨ 下載zip檔</h5>
 <p><img src="/images/courses/hugo-themes.png" alt=""></p>
 <hr>
@@ -239,7 +249,16 @@
 <img src="/images/courses/localhost.png" alt=""></p>
 <hr>
 <h3 id="三客制化網站">《三》客制化網站</h3>
-<h5 id="1網址及網站icon設定">1.網址及網站icon設定</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">exampleSite <span style="color:#666">-----</span> content <span style="color:#666">-----</span> blog <span style="color:#60a0b0;font-style:italic"># 文章內容 md</span>
+                             <span style="color:#666">|</span>
+                             <span style="color:#666">|-</span> data <span style="color:#666">-----</span> homepage<span style="color:#666">.</span>yml <span style="color:#60a0b0;font-style:italic"># 首頁設計 yml</span>
+                             <span style="color:#666">|</span>
+                             <span style="color:#666">|-</span> static <span style="color:#666">-----</span> images <span style="color:#60a0b0;font-style:italic"># 圖片</span>
+                             <span style="color:#666">|</span>
+                             <span style="color:#666">|-</span> themes <span style="color:#666">-----</span> assets <span style="color:#666">-----</span>scss <span style="color:#60a0b0;font-style:italic"># 主題色 &amp; 字體</span>
+                             <span style="color:#666">|</span>
+                             <span style="color:#666">|-</span> config<span style="color:#666">.</span>toml <span style="color:#60a0b0;font-style:italic"># 個人資料</span>
+</code></pre></div><h5 id="1網址及網站icon設定">1.網址及網站icon設定</h5>
 <ul>
 <li>
 <h5 id="baseurl網址為httpsusernamegithubio"><code>baseURL</code>(網址)為<code>https://*Username*.github.io</code></h5>
@@ -307,13 +326,31 @@
 <h3 id="五使用google功能">《五》使用Google功能</h3>
 <h5 id="1設定google-analyticshttpsanalyticsgooglecomanalyticswebprovisionprovision">1.設定<a href="https://analytics.google.com/analytics/web/provision/#/provision">Google Analytics</a></h5>
 <p><img src="/images/courses/ga.png" alt=""></p>
-<h5 id="2設定追蹤id">2.設定追蹤ID</h5>
+<hr>
 <ul>
 <li>
-<h5 id="貼至configtoml中的google_analitycs_id">貼至<code>config.toml</code>中的<code>google_analitycs_id</code></h5>
+<h5 id="將追蹤id貼至configtoml中的google_analitycs_id">將追蹤ID貼至<code>config.toml</code>中的<code>google_analitycs_id</code></h5>
 </li>
 </ul>
 <p><img src="/images/courses/ga-id.png" alt=""></p>
+<hr>
+<h5 id="2設定google-search-consolehttpssearchgooglecomsearch-consoleabout">2.設定<a href="https://search.google.com/search-console/about">Google Search Console</a></h5>
+<p><img src="/images/courses/google-search-console.png" alt=""></p>
+<hr>
+<ul>
+<li>
+<h5 id="貼上網址要求建立索引">貼上網址<code>要求建立索引</code></h5>
+</li>
+</ul>
+<p><img src="/images/courses/check.png" alt=""></p>
+<hr>
+<h3 id="結論">結論</h3>
+<h5 id="相信大家在架站的過程中絕對可以體會到使用github-pages的便利性及高自由度整個過程絕對比透過worldpress架站還來得有效率我操作幾次下來幾乎都可以在半小時內架好一個完整的模板一切都設定好後大家就可以將重心放在文章的質與量囉">相信大家在架站的過程中絕對可以體會到使用<code>GitHub Pages</code>的便利性及高自由度，整個過程絕對比透過worldpress架站還來得有效率，我操作幾次下來幾乎都可以在半小時內架好一個完整的模板，一切都設定好後大家就可以將重心放在文章的質與量囉!</h5>
+<p>.</p>
+<h5 id="而hahow課程httpshahowincourses5de8fec16117240026540b9cdiscussions中其實還有很多強大的功能和markdown寫法我這邊就不一一介紹了大家有興趣的話可以入手這堂超值課程這絕對是累積個人作品和超高客製化的網站救星啊">而<a href="https://hahow.in/courses/5de8fec16117240026540b9c/discussions">Hahow課程</a>中其實還有很多強大的功能和markdown寫法我這邊就不一一介紹了，大家有興趣的話可以入手這堂超值課程，這絕對是累積個人作品和超高客製化的網站救星啊!!</h5>
+<h5 id="而且也不用擔心沒有前端基礎我自己也是完全不懂前端語法但仍然可以架設出一個看起來非常專業的網站所以這堂課也很適合沒程式基礎的小白哦">而且也不用擔心沒有前端基礎，我自己也是完全不懂前端語法但仍然可以架設出一個看起來非常專業的網站，所以這堂課也很適合沒程式基礎的小白哦!</h5>
+<p>.</p>
+<h5 id="個人推薦-">個人推薦: ★★★★★</h5>
 
       </div>
       
@@ -322,10 +359,10 @@
         
         <div class="d-flex justify-content-between align-items-center flex-wrap">
           <div class="media mb-2 mb-sm-0 align-items-center">
-            <img class="mr-4 img-fluid teacher-thumb-sm" src="/images/teachers/teacher-1.jpg" alt="Clark Malik">
+            <img class="mr-4 img-fluid teacher-thumb-sm" src="/images/teachers/KB.png" alt="KB">
             <div class="media-body">
-              <h4 class="mt-0"><a href="https://AlphaFinance.github.io/teacher/clark-malik/">Clark Malik</a></h4>
-              Computer Science
+              <h4 class="mt-0"><a href="https://AlphaFinance.github.io/teacher/alex-rook/">KB</a></h4>
+              Python
             </div>
           </div>
           <div class="social-link">
@@ -371,21 +408,6 @@
       
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-  <img class="card-img-top rounded-0" src="/images/courses/course-4.jpg" alt="JavaScript">
-  <div class="card-body">
-    <ul class="list-inline mb-2">
-      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
-      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Programming</li>
-    </ul>
-    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/course-4/">JavaScript</a></h4>
-    <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut …</p>
-    <a href="https://AlphaFinance.github.io/course/course-4/" class="btn btn-primary btn-sm">Apply now</a>
-  </div>
-</div>
-      </div>
-      
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card p-0 border-primary rounded-0 hover-shadow">
   <img class="card-img-top rounded-0" src="/images/courses/course-5.jpg" alt="Algorithm">
   <div class="card-body">
     <ul class="list-inline mb-2">
@@ -410,6 +432,21 @@
     <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/course-2/">Mathematics</a></h4>
     <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut …</p>
     <a href="https://AlphaFinance.github.io/course/course-2/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/course-4.jpg" alt="JavaScript">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Programming</li>
+    </ul>
+    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/course-4/">JavaScript</a></h4>
+    <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut …</p>
+    <a href="https://AlphaFinance.github.io/course/course-4/" class="btn btn-primary btn-sm">Apply now</a>
   </div>
 </div>
       </div>
