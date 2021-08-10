@@ -63,6 +63,26 @@
     </item>
     
     <item>
+      <title>Python快速入門</title>
+      <link>https://AlphaFinance.github.io/course/basis/</link>
+      <pubDate>Sun, 31 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://AlphaFinance.github.io/course/basis/</guid>
+      <description>前言 從2019年開始學習Python到現在也快兩年了，其中也有接觸到其他程式語言像是R、C++、HTML等，但我必須說Python會成為近十年熱門程度上升幅度最大不是沒有原因的，最主要是因為它的語法真的非常人性化，短短三行程式碼就可以做出非常精美的圖片及數據分析。 .
+所以就算是程式小白也不用擔心，當初我從0開始到進行進階的股市數據分析只有短短一個月而已，這就可以說明Python真的非常容易上手!! 接下來就帶領大家來見證Python強大的功能吧!  目錄 《一》認識程式語言 《二》Python基礎觀念 《三》Python內建函式 《四》Pandas應用  《一》認識程式語言 1.</description>
+    </item>
+    
+    <item>
+      <title>建置Python開發環境</title>
+      <link>https://AlphaFinance.github.io/course/environment/</link>
+      <pubDate>Fri, 15 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://AlphaFinance.github.io/course/environment/</guid>
+      <description>前言 如果說要開發小型專案的話我個人首推Jupyter Lab(前身為Jupyter Notebook)，相較於vscode、spyter、pycharm，它的優勢在於能即時執行程式碼，而不需要再去cmd下python app.py等指令，再加上它的output效果非常優，無論是pandas、matplotlib、plotly呈現的表格及圖片使我們在數據分析上有超棒的觀賞性。 .
+說到安裝套件就必須提一下當初我的痛苦，當時我剛學Python想安裝套件時我呆呆地一個一個pip install，所以你可以想像如果我要安裝20個packages時那畫面有多美了XD 所幸本人的懶人病促使我去搜尋如何一鍵安裝所有想要的套件，所有安裝小訣竅都寫在這篇教學文中囉!!  目錄 《一》安裝miniconda 《二》建立開發環境 《三》安裝套件 《四》下載中文字體  《一》安裝miniconda 1.</description>
+    </item>
+    
+    <item>
       <title>如何架設個人網站</title>
       <link>https://AlphaFinance.github.io/course/website/</link>
       <pubDate>Fri, 01 Jan 2021 15:27:17 +0800</pubDate>
@@ -208,15 +228,6 @@
     </item>
     
     <item>
-      <title>Mathematics</title>
-      <link>https://AlphaFinance.github.io/course/course-2/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/course/course-2/</guid>
-      <description>About Course Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
       <title>Teaching Materials and Testing Methods</title>
       <link>https://AlphaFinance.github.io/notice/notice-1/</link>
       <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
@@ -268,15 +279,6 @@
       
       <guid>https://AlphaFinance.github.io/notice/notice-6/</guid>
       <description>About Notice Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Vlogging</title>
-      <link>https://AlphaFinance.github.io/course/course-6/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/course/course-6/</guid>
-      <description>About Course Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
     </item>
     
     <item>

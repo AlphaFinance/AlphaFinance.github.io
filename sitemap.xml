@@ -26,10 +26,16 @@
     <loc>https://AlphaFinance.github.io/event/event-6/</loc>
     <lastmod>2030-03-09T15:27:17+06:00</lastmod>
   </url><url>
-    <loc>https://AlphaFinance.github.io/course/website/</loc>
-    <lastmod>2021-01-01T15:27:17+08:00</lastmod>
+    <loc>https://AlphaFinance.github.io/course/basis/</loc>
+    <lastmod>2021-01-31T15:27:17+08:00</lastmod>
   </url><url>
     <loc>https://AlphaFinance.github.io/course/</loc>
+    <lastmod>2021-01-31T15:27:17+08:00</lastmod>
+  </url><url>
+    <loc>https://AlphaFinance.github.io/course/environment/</loc>
+    <lastmod>2021-01-15T15:27:17+08:00</lastmod>
+  </url><url>
+    <loc>https://AlphaFinance.github.io/course/website/</loc>
     <lastmod>2021-01-01T15:27:17+08:00</lastmod>
   </url><url>
     <loc>https://AlphaFinance.github.io/tags/advice/</loc>
@@ -116,9 +122,6 @@
     <loc>https://AlphaFinance.github.io/blog/</loc>
     <lastmod>2019-07-06T15:27:17+06:00</lastmod>
   </url><url>
-    <loc>https://AlphaFinance.github.io/course/course-2/</loc>
-    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
-  </url><url>
     <loc>https://AlphaFinance.github.io/categories/mathmatics-learning/</loc>
     <lastmod>2019-07-06T15:27:17+06:00</lastmod>
   </url><url>
@@ -152,13 +155,6 @@
     <loc>https://AlphaFinance.github.io/notice/notice-6/</loc>
     <lastmod>2019-07-06T15:27:17+06:00</lastmod>
   </url><url>
-    <loc>https://AlphaFinance.github.io/course/course-6/</loc>
-    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
-  </url><url>
-    <loc>https://AlphaFinance.github.io/about/</loc>
-  </url><url>
-    <loc>https://AlphaFinance.github.io/contact/</loc>
-  </url><url>
     <loc>https://AlphaFinance.github.io/author/</loc>
   </url><url>
     <loc>https://AlphaFinance.github.io/author/john-doe/</loc>
@@ -168,5 +164,9 @@
     <loc>https://AlphaFinance.github.io/author/mark-dinn/</loc>
   </url><url>
     <loc>https://AlphaFinance.github.io/teacher/</loc>
+  </url><url>
+    <loc>https://AlphaFinance.github.io/about/</loc>
+  </url><url>
+    <loc>https://AlphaFinance.github.io/contact/</loc>
   </url>
 </urlset>
