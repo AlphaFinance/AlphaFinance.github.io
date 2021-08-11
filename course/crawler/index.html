@@ -217,7 +217,21 @@
 <h5 id="而對於不同網站都會有不同的爬蟲技巧本堂課程收錄了可以破解90以上網頁的爬蟲技術甚至可以爬到連網站上都無法顯示的data">而對於不同網站都會有不同的爬蟲技巧，本堂課程收錄了可以破解90%以上網頁的爬蟲技術，甚至可以爬到連網站上都無法顯示的data!</h5>
 <hr>
 <h3 id="目錄">目錄</h3>
-<pre><code>《一》
+<pre><code>《一》認識網頁型態
+
+《二》網頁爬蟲技巧
+
+《三》證交所爬蟲
+
+《四》公開資訊觀測站爬蟲
+
+《五》期交所爬蟲
+
+《六》蝦皮爬蟲
+
+《七》鉅亨網爬蟲
+
+《八》CMoney爬蟲
 </code></pre><hr>
 <h3 id="一認識網頁型態">《一》認識網頁型態</h3>
 <table>
@@ -268,6 +282,193 @@
 </table>
 <hr>
 <h3 id="二網頁爬蟲技巧">《二》網頁爬蟲技巧</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">                                                 <span style="color:#666">|--</span> pd <span style="color:#60a0b0;font-style:italic"># 表格</span>
+                        <span style="color:#666">|--</span> requests <span style="color:#666">--|--</span> res<span style="color:#666">.</span>json <span style="color:#60a0b0;font-style:italic"># 文字</span>
+                        <span style="color:#666">|</span>                        <span style="color:#666">|--</span> beautifulsoup <span style="color:#60a0b0;font-style:italic"># 文字</span>
+web crawler <span style="color:#666">--</span>
+                        <span style="color:#666">|</span>
+                        <span style="color:#666">|--</span> selenuim <span style="color:#60a0b0;font-style:italic"># 模擬瀏覽器</span>
+
+</code></pre></div><hr>
+<h3 id="三證交所httpswwwtwsecomtwzh爬蟲">《三》<a href="https://www.twse.com.tw/zh/">證交所</a>爬蟲</h3>
+<h5 id="data型態為表格--使用pdread">data型態為<code>表格</code> ➨ 使用<code>pd.read</code></h5>
+<p><img src="/images/courses/twse-close.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+
+<span style="color:#60a0b0;font-style:italic"># 將網址中的json改為csv ---refer to FinLab部落格</span>
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://www.twse.com.tw/exchangeReport/MI_INDEX?response=csv&amp;date=20210810&amp;type=ALLBUT0999&amp;_=1628643765268&#39;</span>
+headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;User-Agent&#39;</span>:<span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/517.16 (KHTML, like Gecko) Chrome/12.0.4912.333 Safari/524.16&#39;</span>}
+
+res <span style="color:#666">=</span> requests<span style="color:#666">.</span>get(url,headers<span style="color:#666">=</span>headers)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">io</span>
+
+data <span style="color:#666">=</span> <span style="color:#4070a0">&#39;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#39;</span><span style="color:#666">.</span>join([l <span style="color:#007020;font-weight:bold">for</span> l <span style="color:#007020;font-weight:bold">in</span> res<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39;</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#39;</span>) <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020">len</span>(l<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39;,&#34;&#39;</span>))<span style="color:#666">&gt;=</span><span style="color:#40a070">12</span>])
+
+df <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_csv(io<span style="color:#666">.</span>StringIO(data<span style="color:#666">.</span>replace(<span style="color:#4070a0">&#39;=&#39;</span>,<span style="color:#4070a0">&#39;&#39;</span>)))<span style="color:#666">.</span>rename(columns<span style="color:#666">=</span>{<span style="color:#4070a0">&#39;證券代號&#39;</span>:<span style="color:#4070a0">&#39;stock_id&#39;</span>})<span style="color:#666">.</span>set_index(<span style="color:#4070a0">&#39;stock_id&#39;</span>)
+df <span style="color:#666">=</span> df<span style="color:#666">.</span>applymap(<span style="color:#007020;font-weight:bold">lambda</span> s:pd<span style="color:#666">.</span>to_numeric(<span style="color:#007020">str</span>(s)<span style="color:#666">.</span>replace(<span style="color:#4070a0">&#39;,&#39;</span>,<span style="color:#4070a0">&#39;&#39;</span>),errors<span style="color:#666">=</span><span style="color:#4070a0">&#39;coerce&#39;</span>))<span style="color:#666">.</span>dropna(axis<span style="color:#666">=</span><span style="color:#40a070">1</span>,how<span style="color:#666">=</span><span style="color:#4070a0">&#39;all&#39;</span>)
+
+df
+</code></pre></div><p><img src="/images/courses/close.png" alt=""></p>
+<hr>
+<h3 id="四公開資訊觀測站爬蟲httpsmopstwsecomtwmopswebindex">《四》<a href="https://mops.twse.com.tw/mops/web/index">公開資訊觀測站爬蟲</a></h3>
+<h5 id="data型態為表格--使用pdread-1">data型態為表格 ➨ 使用<code>pd.read</code></h5>
+<h5 id="查詢按鍵--透過form-data調整參數">查詢按鍵 ➨ 透過<code>Form Data</code>調整參數</h5>
+<p><img src="/images/courses/mops.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://mops.twse.com.tw/mops/web/ajax_t51sb01&#39;</span>
+headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;User-Agent&#39;</span>: <span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/888.36 (KHTML, like Gecko) Chrome/23.0.2313.192 Safari/123.34&#39;</span>}
+
+<span style="color:#60a0b0;font-style:italic"># Form Data</span>
+payload <span style="color:#666">=</span> {
+    <span style="color:#4070a0">&#39;encodeURIComponent&#39;</span>: <span style="color:#4070a0">&#39;1&#39;</span>,
+    <span style="color:#4070a0">&#39;step&#39;</span>: <span style="color:#4070a0">&#39;1&#39;</span>,
+    <span style="color:#4070a0">&#39;firstin&#39;</span>: <span style="color:#4070a0">&#39;1&#39;</span>,
+    <span style="color:#4070a0">&#39;TYPEK&#39;</span>: <span style="color:#4070a0">&#39;sii&#39;</span> <span style="color:#60a0b0;font-style:italic"># 上市:sii / 上櫃:otc</span>
+}
+
+res <span style="color:#666">=</span> requests<span style="color:#666">.</span>post(url,headers<span style="color:#666">=</span>headers,data<span style="color:#666">=</span>payload)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+
+df <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_html(res<span style="color:#666">.</span>text)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>rename(columns<span style="color:#666">=</span>{<span style="color:#4070a0">&#39;公司代號&#39;</span>:<span style="color:#4070a0">&#39;stock_id&#39;</span>})<span style="color:#666">.</span>set_index(<span style="color:#4070a0">&#39;stock_id&#39;</span>)
+df
+</code></pre></div><p><img src="/images/courses/industry.png" alt=""></p>
+<hr>
+<h3 id="五期交所httpswwwtaifexcomtwchtindex爬蟲">《五》<a href="https://www.taifex.com.tw/cht/index">期交所</a>爬蟲</h3>
+<h5 id="下載csv檔--使用pdread">下載csv檔 ➨ 使用<code>pd.read</code></h5>
+<h5 id="下載按鍵--透過form-data調整參數">下載按鍵 ➨ 透過<code>Form Data</code>調整參數</h5>
+<p><img src="/images/courses/tfe.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
+
+StartDate <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2007</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">10</span>)
+EndDate <span style="color:#666">=</span> StartDate<span style="color:#666">+</span>datetime<span style="color:#666">.</span>timedelta(<span style="color:#40a070">365</span><span style="color:#666">*</span><span style="color:#40a070">3</span>)
+
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://www.taifex.com.tw/cht/3/futAndOptDateDown&#39;</span>
+headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;User-Agent&#39;</span>: <span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/333.33 (KHTML, like Gecko) Chrome/11.0.6665.188 Safari/999.36&#39;</span>}
+
+<span style="color:#60a0b0;font-style:italic"># Form Data</span>
+payload <span style="color:#666">=</span> {
+    <span style="color:#4070a0">&#39;firstDate&#39;</span>: f<span style="color:#4070a0">&#34;{StartDate.strftime(&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&#34;</span>, <span style="color:#60a0b0;font-style:italic"># 最舊可索取data ~ 期間為三年</span>
+    <span style="color:#4070a0">&#39;lastDate&#39;</span>: f<span style="color:#4070a0">&#34;{EndDate.strftime(&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&#34;</span>, <span style="color:#60a0b0;font-style:italic"># 當天日期</span>
+    <span style="color:#4070a0">&#39;queryStartDate&#39;</span>: f<span style="color:#4070a0">&#34;{StartDate.strftime(&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&#34;</span>, <span style="color:#60a0b0;font-style:italic"># 索取起始日期</span>
+    <span style="color:#4070a0">&#39;queryEndDate&#39;</span>: f<span style="color:#4070a0">&#34;{EndDate.strftime(&#39;%Y/%m/</span><span style="color:#70a0d0;font-style:italic">%d</span><span style="color:#4070a0">&#39;)}&#34;</span>, <span style="color:#60a0b0;font-style:italic"># 索取結束日期</span>
+}
+
+res <span style="color:#666">=</span> requests<span style="color:#666">.</span>post(url,headers<span style="color:#666">=</span>headers,data<span style="color:#666">=</span>payload)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">io</span>
+
+df <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_csv(io<span style="color:#666">.</span>StringIO(res<span style="color:#666">.</span>text))<span style="color:#666">.</span>rename(columns<span style="color:#666">=</span>{<span style="color:#4070a0">&#39;日期&#39;</span>:<span style="color:#4070a0">&#39;date&#39;</span>})<span style="color:#666">.</span>set_index([<span style="color:#4070a0">&#39;date&#39;</span>,<span style="color:#4070a0">&#39;身份別&#39;</span>])
+df <span style="color:#666">=</span> df<span style="color:#666">.</span>applymap(<span style="color:#007020;font-weight:bold">lambda</span> s:pd<span style="color:#666">.</span>to_numeric(<span style="color:#007020">str</span>(s),errors<span style="color:#666">=</span><span style="color:#4070a0">&#39;coerce&#39;</span>))
+
+df
+</code></pre></div><p><img src="/images/courses/future.png" alt=""></p>
+<hr>
+<h3 id="六蝦皮httpsshopeetw爬蟲">《六》<a href="https://shopee.tw/">蝦皮</a>爬蟲</h3>
+<h5 id="data型態為文字--使用resjson--beautifulsoup">data型態為文字 ➨ 使用<code>res.json()</code> / <code>beautifulsoup</code></h5>
+<p><img src="/images/courses/shopee.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://shopee.tw/api/v4/search/search_items?by=relevancy&amp;keyword=jordan&amp;limit=60&amp;newest=0&amp;order=desc&amp;page_type=search&amp;scenario=PAGE_GLOBAL_SEARCH&amp;version=2&#39;</span>
+headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;User-Agent&#39;</span>: <span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/111.26 (KHTML, like Gecko) Chrome/33.0.6785.145 Safari/666.11&#39;</span>}
+
+res <span style="color:#666">=</span> requests<span style="color:#666">.</span>get(url,headers<span style="color:#666">=</span>headers)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+names <span style="color:#666">=</span> [product[<span style="color:#4070a0">&#39;item_basic&#39;</span>][<span style="color:#4070a0">&#39;name&#39;</span>] <span style="color:#007020;font-weight:bold">for</span> product <span style="color:#007020;font-weight:bold">in</span> res<span style="color:#666">.</span>json()[<span style="color:#4070a0">&#39;items&#39;</span>]]
+prices <span style="color:#666">=</span> [<span style="color:#007020">int</span>(product[<span style="color:#4070a0">&#39;item_basic&#39;</span>][<span style="color:#4070a0">&#39;price&#39;</span>])<span style="color:#666">/</span><span style="color:#40a070">10e4</span> <span style="color:#007020;font-weight:bold">for</span> product <span style="color:#007020;font-weight:bold">in</span> res<span style="color:#666">.</span>json()[<span style="color:#4070a0">&#39;items&#39;</span>]]
+
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+
+df <span style="color:#666">=</span> pd<span style="color:#666">.</span>DataFrame({
+    <span style="color:#4070a0">&#39;price&#39;</span>:prices
+},index<span style="color:#666">=</span>[names])
+
+df
+</code></pre></div><p><img src="/images/courses/shopee-data.png" alt=""></p>
+<hr>
+<h3 id="七鉅亨網httpswwwcnyescom爬蟲">《七》<a href="https://www.cnyes.com/">鉅亨網</a>爬蟲</h3>
+<h5 id="data型態為文字--使用resjson--beautifulsoup-1">data型態為文字 ➨ 使用<code>res.json()</code> / <code>beautifulsoup</code></h5>
+<p><img src="/images/courses/cnyes.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span>
+
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://news.cnyes.com/news/cat/headline&#39;</span>
+headers <span style="color:#666">=</span> {<span style="color:#4070a0">&#39;user-agent&#39;</span>: <span style="color:#4070a0">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/444.34 (KHTML, like Gecko) Chrome/15.0.4356.246 Safari/123.56&#39;</span>}
+
+res <span style="color:#666">=</span> requests<span style="color:#666">.</span>get(url,headers<span style="color:#666">=</span>headers)
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">bs4</span> <span style="color:#007020;font-weight:bold">import</span> BeautifulSoup
+
+soup <span style="color:#666">=</span> BeautifulSoup(res<span style="color:#666">.</span>text,<span style="color:#4070a0">&#39;html.parser&#39;</span>)
+<span style="color:#007020;font-weight:bold">for</span> headline <span style="color:#007020;font-weight:bold">in</span> soup<span style="color:#666">.</span>find_all(class_<span style="color:#666">=</span><span style="color:#4070a0">&#34;_1Zdp&#34;</span>):
+    <span style="color:#007020;font-weight:bold">print</span>(headline<span style="color:#666">.</span>text)
+</code></pre></div><p>12:33理財美科技行情改走輪動風 美股ETF多元題材可掌握一籃子投資<br>
+12:30能源Delta打壓原油需求 亞洲已有4買家要求沙國9月減少供貨<br>
+12:20美股力挺通膨是暫時的！芝加哥Fed總裁Evans：得再多看幾個月的就業報告<br>
+12:10歐亞股南韓疫情煞不住！單日新增2223例創新高<br>
+12:03台灣政經7月減薪逾2成、中高齡再就業者 可申請1萬元生活補貼<br>
+12:03台股新聞建大自行車胎需求旺 品牌廠大老闆親自催貨穩料源<br>
+12:00美股美債殖利率升至三周高點 投行對後市看法不一</p>
+<hr>
+<h3 id="八cmoneyhttpswwwcmoneytwapp爬蟲">《八》<a href="https://www.cmoney.tw/app/">CMoney</a>爬蟲</h3>
+<h5 id="防爬蟲機制---使用selenuim">防爬蟲機制  ➨ 使用<code>selenuim</code></h5>
+<h5 id="安裝chromedriverhttpschromedriverchromiumorgdownloads-查看本機版本點選網頁自訂及管理--說明--關於google-chrome">安裝<a href="https://chromedriver.chromium.org/downloads">chromedriver</a> (查看本機版本:點選網頁<code>自訂及管理</code> ➨ <code>說明</code> ➨ <code>關於Google Chrome</code>)</h5>
+<p><img src="/images/courses/cmoney.png" alt=""></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">selenium</span> <span style="color:#007020;font-weight:bold">import</span> webdriver
+
+driver <span style="color:#666">=</span> webdriver<span style="color:#666">.</span>Chrome(<span style="color:#4070a0">&#39;chromedriver.exe&#39;</span>)
+url <span style="color:#666">=</span> <span style="color:#4070a0">&#39;https://www.cmoney.tw/finance/f00039.aspx?s=2615&#39;</span>
+
+driver<span style="color:#666">.</span>get(url)
+driver<span style="color:#666">.</span>maximize_window() <span style="color:#60a0b0;font-style:italic"># 最大化視窗</span>
+
+<span style="color:#60a0b0;font-style:italic"># 資料整理</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+
+df <span style="color:#666">=</span> pd<span style="color:#666">.</span>DataFrame()
+
+<span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">2</span>,<span style="color:#40a070">40</span>):
+    <span style="color:#007020;font-weight:bold">try</span>:
+        df <span style="color:#666">=</span> df<span style="color:#666">.</span>append(pd<span style="color:#666">.</span>DataFrame({
+            <span style="color:#4070a0">&#39;買張&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[1]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">1</span>],
+            <span style="color:#4070a0">&#39;賣張&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[1]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">2</span>],
+            <span style="color:#4070a0">&#39;買賣超&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[1]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">3</span>],
+        },index<span style="color:#666">=</span>[driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[1]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">0</span>]]))
+    <span style="color:#007020;font-weight:bold">except</span>:
+        <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">2</span>,<span style="color:#40a070">40</span>):
+            <span style="color:#007020;font-weight:bold">try</span>:
+                df <span style="color:#666">=</span> df<span style="color:#666">.</span>append(pd<span style="color:#666">.</span>DataFrame({
+                    <span style="color:#4070a0">&#39;買張&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[2]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">1</span>],
+                    <span style="color:#4070a0">&#39;賣張&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[2]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">2</span>],
+                    <span style="color:#4070a0">&#39;買賣超&#39;</span>:driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[2]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">3</span>],
+                },index<span style="color:#666">=</span>[driver<span style="color:#666">.</span>find_elements_by_xpath(f<span style="color:#4070a0">&#34;//*[@id=&#39;MainContent&#39;]/ul/li[2]/article/div/div/div/div/table/tbody/tr[{i}]&#34;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text<span style="color:#666">.</span>split(<span style="color:#4070a0">&#39; &#39;</span>)[<span style="color:#40a070">0</span>]]))
+            <span style="color:#007020;font-weight:bold">except</span>:
+                <span style="color:#007020;font-weight:bold">pass</span>
+            <span style="color:#007020;font-weight:bold">pass</span>
+        <span style="color:#007020;font-weight:bold">break</span>
+
+dataset <span style="color:#666">=</span> df<span style="color:#666">.</span>applymap(<span style="color:#007020;font-weight:bold">lambda</span> s:pd<span style="color:#666">.</span>to_numeric(<span style="color:#007020">str</span>(s),errors<span style="color:#666">=</span><span style="color:#4070a0">&#39;coerce&#39;</span>))
+dataset <span style="color:#666">=</span> dataset<span style="color:#666">.</span>sort_values(<span style="color:#4070a0">&#39;買賣超&#39;</span>,ascending<span style="color:#666">=</span>False)
+dataset
+</code></pre></div><p><img src="/images/courses/cmoney-data.png" alt=""></p>
+<hr>
+<h3 id="結論">結論</h3>
+<h5 id="這堂課程提供了幾乎可以爬90以上的爬蟲技巧相信大家可以透過這些技術將自己想蒐集的資料給爬取下來進行分析但大家一定要特別注意爬蟲本身就是有點遊走在法律及道德邊緣的方法所以在爬蟲時也務必要遵守網路秩序不要將爬蟲技巧用在惡意攻擊網站上以免造成網站管理員的損害">這堂課程提供了幾乎可以爬90%以上的爬蟲技巧，相信大家可以透過這些技術將自己想蒐集的資料給爬取下來進行分析，但大家一定要特別注意爬蟲本身就是有點遊走在法律及道德邊緣的方法，所以在爬蟲時也務必要遵守網路秩序，不要將爬蟲技巧用在惡意攻擊網站上，以免造成網站管理員的損害。</h5>
+<p>.</p>
+<h5 id="另外想特別提一下在爬期交所的過程如果你是透過網站正常程序下載資料會發現期交所最多只會提供最近三年的資料而使用我們課程中的爬蟲可以拿到2007年的歷史數據由此可見爬蟲真的有非常強大的功能去蒐集資料所以啦我們才會一再強調爬蟲務必只能使用在正確的地方唷">另外想特別提一下在爬期交所的過程，如果你是透過網站正常程序下載資料會發現期交所最多只會提供最近三年的資料，而使用我們課程中的爬蟲可以拿到2007年的歷史數據，由此可見爬蟲真的有非常強大的功能去蒐集資料，所以啦~我們才會一再強調爬蟲務必只能使用在正確的地方唷!</h5>
+<p>.</p>
+<h5 id="熱門程度-">熱門程度: ★★★★★</h5>
+<p>.<br>
+本篇爬取證交所的方式參考<a href="https://www.finlab.tw/">FinLab部落格</a>，若有侵害著作權，請來信或留言告知，我們將儘速移除相關內容。</p>
 
       </div>
       
@@ -340,30 +541,30 @@
       
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-  <img class="card-img-top rounded-0" src="/images/courses/basis.png" alt="Python快速入門">
+  <img class="card-img-top rounded-0" src="/images/courses/website.png" alt="如何架設個人網站">
   <div class="card-body">
     <ul class="list-inline mb-2">
       <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
-      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Hugo</li>
     </ul>
-    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/basis/">Python快速入門</a></h4>
-    <p class="card-text mb-4">Python基礎語法 &amp; Pandas應用</p>
-    <a href="https://AlphaFinance.github.io/course/basis/" class="btn btn-primary btn-sm">Apply now</a>
+    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/website/">如何架設個人網站</a></h4>
+    <p class="card-text mb-4">Hugo快速架站 &amp; Google服務</p>
+    <a href="https://AlphaFinance.github.io/course/website/" class="btn btn-primary btn-sm">Apply now</a>
   </div>
 </div>
       </div>
       
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-  <img class="card-img-top rounded-0" src="/images/courses/course-4.jpg" alt="JavaScript">
+  <img class="card-img-top rounded-0" src="/images/courses/course-3.jpg" alt="Artificial Intelligence">
   <div class="card-body">
     <ul class="list-inline mb-2">
       <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
-      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Programming</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Artificial Intelligence</li>
     </ul>
-    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/course-4/">JavaScript</a></h4>
+    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/course-3/">Artificial Intelligence</a></h4>
     <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut …</p>
-    <a href="https://AlphaFinance.github.io/course/course-4/" class="btn btn-primary btn-sm">Apply now</a>
+    <a href="https://AlphaFinance.github.io/course/course-3/" class="btn btn-primary btn-sm">Apply now</a>
   </div>
 </div>
       </div>
