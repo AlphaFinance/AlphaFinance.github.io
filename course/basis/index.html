@@ -424,7 +424,15 @@ x<span style="color:#666">.</span>barking()
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">for</span> name,color <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">zip</span>([<span style="color:#4070a0">&#39;ma5&#39;</span>,<span style="color:#4070a0">&#39;ma20&#39;</span>,<span style="color:#4070a0">&#39;ma60&#39;</span>],[<span style="color:#4070a0">&#39;red&#39;</span>,<span style="color:#4070a0">&#39;blue&#39;</span>,<span style="color:#4070a0">&#39;green&#39;</span>]):
     df[name]<span style="color:#666">.</span>plot(color<span style="color:#666">=</span>color)
 </code></pre></div><hr>
-<h5 id="7list-comprehension">7.<code>list comprehension</code></h5>
+<h5 id="7map">7.<code>map</code></h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">square</span>(x) :         
+    <span style="color:#007020;font-weight:bold">return</span> x <span style="color:#666">**</span> <span style="color:#40a070">2</span>
+
+<span style="color:#60a0b0;font-style:italic"># for迴圈執行function</span>
+<span style="color:#007020">list</span>(<span style="color:#007020">map</span>(square, [<span style="color:#40a070">1</span>,<span style="color:#40a070">2</span>,<span style="color:#40a070">3</span>,<span style="color:#40a070">4</span>,<span style="color:#40a070">5</span>]))
+</code></pre></div><p>[1,4,9,16,25]</p>
+<hr>
+<h5 id="8list-comprehension">8.<code>list comprehension</code></h5>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">[<span style="color:#4070a0">&#39;red&#39;</span> <span style="color:#007020;font-weight:bold">if</span> x<span style="color:#666">&gt;=</span><span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#4070a0">&#39;green&#39;</span> <span style="color:#007020;font-weight:bold">for</span> x <span style="color:#007020;font-weight:bold">in</span> df]
 </code></pre></div><hr>
 <h3 id="四pandas應用">《四》Pandas應用</h3>
@@ -614,45 +622,45 @@ df<span style="color:#666">.</span>query(<span style="color:#4070a0">&#34;day==@
       
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-  <img class="card-img-top rounded-0" src="/images/courses/website.png" alt="如何架設個人網站">
+  <img class="card-img-top rounded-0" src="/images/courses/visual.png" alt="數據視覺化實戰">
   <div class="card-body">
     <ul class="list-inline mb-2">
       <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
-      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Hugo</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
     </ul>
-    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/website/">如何架設個人網站</a></h4>
-    <p class="card-text mb-4">Hugo快速架站 &amp; Google服務</p>
-    <a href="https://AlphaFinance.github.io/course/website/" class="btn btn-primary btn-sm">Apply now</a>
+    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/visual/">數據視覺化實戰</a></h4>
+    <p class="card-text mb-4">認識視覺化套件 &amp; 客制化調整</p>
+    <a href="https://AlphaFinance.github.io/course/visual/" class="btn btn-primary btn-sm">Apply now</a>
   </div>
 </div>
       </div>
       
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-  <img class="card-img-top rounded-0" src="/images/courses/course-3.jpg" alt="Artificial Intelligence">
+  <img class="card-img-top rounded-0" src="/images/courses/environment.png" alt="建置Python開發環境">
   <div class="card-body">
     <ul class="list-inline mb-2">
       <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
-      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Artificial Intelligence</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
     </ul>
-    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/course-3/">Artificial Intelligence</a></h4>
-    <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut …</p>
-    <a href="https://AlphaFinance.github.io/course/course-3/" class="btn btn-primary btn-sm">Apply now</a>
+    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/environment/">建置Python開發環境</a></h4>
+    <p class="card-text mb-4">建立專案環境 &amp; 安裝超實用套件</p>
+    <a href="https://AlphaFinance.github.io/course/environment/" class="btn btn-primary btn-sm">Apply now</a>
   </div>
 </div>
       </div>
       
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-  <img class="card-img-top rounded-0" src="/images/courses/course-4.jpg" alt="JavaScript">
+  <img class="card-img-top rounded-0" src="/images/courses/crawler.png" alt="Python網頁爬蟲實戰">
   <div class="card-body">
     <ul class="list-inline mb-2">
       <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
-      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Programming</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
     </ul>
-    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/course-4/">JavaScript</a></h4>
-    <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut …</p>
-    <a href="https://AlphaFinance.github.io/course/course-4/" class="btn btn-primary btn-sm">Apply now</a>
+    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/crawler/">Python網頁爬蟲實戰</a></h4>
+    <p class="card-text mb-4">認識網頁型態  &amp; 爬蟲技巧大公開</p>
+    <a href="https://AlphaFinance.github.io/course/crawler/" class="btn btn-primary btn-sm">Apply now</a>
   </div>
 </div>
       </div>
@@ -745,15 +753,15 @@ df<span style="color:#666">.</span>query(<span style="color:#4070a0">&#34;day==@
           <h4 class="text-white mb-5 text-uppercase">Courses</h4>
           <ul class="list-unstyled">
             
+            <li class="mb-3"><a class="text-color" href="https://AlphaFinance.github.io/course/visual/">數據視覺化實戰</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://AlphaFinance.github.io/course/database/">打造數據資料庫</a></li>
+            
             <li class="mb-3"><a class="text-color" href="https://AlphaFinance.github.io/course/crawler/">Python網頁爬蟲實戰</a></li>
             
             <li class="mb-3"><a class="text-color" href="https://AlphaFinance.github.io/course/basis/">Python快速入門</a></li>
             
             <li class="mb-3"><a class="text-color" href="https://AlphaFinance.github.io/course/environment/">建置Python開發環境</a></li>
-            
-            <li class="mb-3"><a class="text-color" href="https://AlphaFinance.github.io/course/website/">如何架設個人網站</a></li>
-            
-            <li class="mb-3"><a class="text-color" href="https://AlphaFinance.github.io/course/course-3/">Artificial Intelligence</a></li>
             
           </ul>
         </div>
