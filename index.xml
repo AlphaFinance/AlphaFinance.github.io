@@ -68,7 +68,8 @@
       <pubDate>Fri, 05 Mar 2021 15:27:17 +0800</pubDate>
       
       <guid>https://AlphaFinance.github.io/course/visual/</guid>
-      <description>About Course Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+      <description>前言 身為專業的資料科學家一定要懂得如何將冷冰冰的數據轉化成一般人可以輕易閱讀的圖表，而數據視覺化正好是Python的強項。 .
+在Python的世界提供了非常多視覺化套件，像是內建的matplotlib，或是靜態的seaborn，甚至有支援JS的plotly和新竄起的pyecharts，都是非常好用且簡單的套件。 那我們趕緊來學習要如何使用它們將冰冷的數據製作成精美的圖表吧!  目錄 《一》matplotlib 《二》seaborn 《三》plotly 《四》pyecharts  《一》matplotlib 1.</description>
     </item>
     
     <item>
