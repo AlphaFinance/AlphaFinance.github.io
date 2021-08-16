@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; AlphaFinance金融科技公司 2021</copyright>
-    <lastBuildDate>Fri, 05 Mar 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://AlphaFinance.github.io/course/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Mar 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://AlphaFinance.github.io/course/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>人工智慧實戰模型</title>
+      <link>https://AlphaFinance.github.io/course/ai/</link>
+      <pubDate>Mon, 15 Mar 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://AlphaFinance.github.io/course/ai/</guid>
+      <description>前言 大家知道目前金融科技最有潛力的領域是什麼嗎? 沒錯!就是我們常常聽到人工智慧，相較於其他程式語言，最能凸顯出Python與眾不同的特色就在於Machine Learning&amp;amp;Neural Network，在GitHub上有非常多的開發者提供了強大的機器學習函式庫，所以即使我們完全不了解機器學習背後演算法的原理，還是能夠訓練出有用的model哦!  目錄 《一》 《一》AI基礎概念 Artificial Intelligence ➨ Machine Learning ➨ Deep Learning 圖片來源: raboobs EVOLVE</description>
+    </item>
+    
     <item>
       <title>數據視覺化實戰</title>
       <link>https://AlphaFinance.github.io/course/visual/</link>
