@@ -222,6 +222,145 @@
 <img src="/images/courses/ai-treemap.png" alt=""><br>
 圖片來源: <a href="https://www.raboobs.top/products.aspx?cname=big+data+deep+learning&amp;cid=28">raboobs</a>  <a href="https://blog.evolvemachinelearners.com/what-is-machine-learning/">EVOLVE</a></p>
 <hr>
+<h3 id="二machine-learning-機器學習">《二》Machine Learning (機器學習)</h3>
+<h5 id="1認識機器學習">1.認識機器學習</h5>
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>意義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Feaures</strong></td>
+<td>訓練model從哪些角度進行學習</td>
+</tr>
+<tr>
+<td><strong>Label</strong></td>
+<td>正確解答</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>特色</th>
+<th>原理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supervised (監督式學習)</strong></td>
+<td>有features &amp; label</td>
+<td>Input <code>features</code>，Output <code>label</code>，訓練model搜尋出兩者之間的關係。</td>
+</tr>
+<tr>
+<td><strong>Unsupervised (非監督式學習)</strong></td>
+<td>只有features</td>
+<td>Input <code>features</code>，沒有Output，訓練model搜尋樣本間的規律關係。相似度比對 (clustering)</td>
+</tr>
+<tr>
+<td><strong>Reinforcements (強化學習)</strong></td>
+<td>有features &amp; label(分數獎懲)</td>
+<td>與環境互動獲得回饋</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>演算法</th>
+<th>原理</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Classification</strong></td>
+<td>label為不連續值(種類) ➨ 分類</td>
+<td><code>True</code> / <code>False</code></td>
+</tr>
+<tr>
+<td><strong>Regression</strong></td>
+<td>label為連續值(數值) ➨ 規律性</td>
+<td><code>預測數值</code></td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/courses/c-r.png" alt=""><br>
+圖片來源:<a href="https://blog.evolvemachinelearners.com/what-is-machine-learning/">EVOLVE</a></p>
+<hr>
+<h5 id="2svm">2.SVM</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h6 id="3lightgbm">3.LightGBM</h6>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h5 id="4xgboost">4.XGBoost</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h3 id="三neural-network-神經網路">《三》Neural Network (神經網路)</h3>
+<h5 id="1認識神經網路">1.認識神經網路</h5>
+<h5 id="深度學習可以看作機器學習的進化版都是為了建立model但深度學習使用類神經網路訓練模型而非機器學習使用的統計模型">深度學習可以看作機器學習的進化版，都是為了建立model，但深度學習使用類神經網路訓練模型，而非機器學習使用的統計模型。</h5>
+<table>
+<thead>
+<tr>
+<th>人工智慧</th>
+<th>訓練原理</th>
+<th>差異</th>
+<th>訓練時間</th>
+<th>預測時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>機器學習</td>
+<td>需人為製作<code>features</code></td>
+<td>需有domain knowledge</td>
+<td>快</td>
+<td>慢</td>
+</tr>
+<tr>
+<td>神經網路</td>
+<td>不需人為製作<code>features</code>，模型可自行生成</td>
+<td>不需domain knowledge</td>
+<td>慢</td>
+<td>快</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/courses/nn.png" alt=""><br>
+圖片來源:<a href="https://towardsdatascience.com/training-deep-neural-networks-9fdb1964b964">towardsdatascience</a></p>
+<hr>
+<h5 id="2keras">2.keras</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h5 id="3lstm">3.LSTM</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h5 id="4cnn">4.CNN</h5>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">
+
+</code></pre></div><hr>
+<h3 id="四訓練風險">《四》訓練風險</h3>
+<p><img src="/images/courses/overfitting.png" alt=""><br>
+圖片來源:<a href="https://towardsdatascience.com/techniques-for-handling-underfitting-and-overfitting-in-machine-learning-348daa2380b9">towardsdatascience</a></p>
+<hr>
+<h3 id="結論">結論</h3>
+<h5 id="看完上述ai預測成果後就可以發現透過演算法和類神經元的訓練後竟然可以打造出幾乎可以拿來實戰的ai投資策略其實國內外已經陸續有少數基金機構將少數的資金拿來真正做ai交易">看完上述AI預測成果後就可以發現，透過演算法和類神經元的訓練後竟然可以打造出幾乎可以拿來實戰的AI投資策略，其實國內外已經陸續有少數基金機構將少數的資金拿來真正做AI交易。</h5>
+<h5 id="但以現今的技術想要達成ai完全替代傳統人工投資還要一大段路要走最大的問題出在模型的黑盒化大部分的時候我們只會得到模型output的交易訊號但卻沒辦法知道ai的思考方式這對於要落實ai交易自動化來說是非常巨大的風險">但以現今的技術想要達成AI完全替代傳統人工投資還要一大段路要走，最大的問題出在模型的黑盒化，大部分的時候我們只會得到模型output的交易訊號，但卻沒辦法知道AI的思考方式，這對於要落實AI交易自動化來說是非常巨大的風險。</h5>
+<h5 id="舉例來說若某天市場出現類似2008金融風暴或是2020疫情融斷等黑天鵝事件時我們無法得知ai會做出何種判斷有可能做出將全數部位一次出清而這種出清方式將會造成市場劇烈下跌進一步擴大投資資金的損失而到時責任歸屬也是一大問題">舉例來說，若某天市場出現類似2008金融風暴或是2020疫情融斷等黑天鵝事件時，我們無法得知AI會做出何種判斷，有可能做出將全數部位一次出清，而這種出清方式將會造成市場劇烈下跌，進一步擴大投資資金的損失。而到時責任歸屬也是一大問題。</h5>
+<p>.</p>
+<h5 id="即使ai在金融方面的應用還無法像其他領域這麼成功但是未來的發展潛力絕對不可小覷所以機器學習神經網路也逐漸成為python科學家必備的基礎知識囉">即使AI在金融方面的應用還無法像其他領域這麼成功，但是未來的發展潛力絕對不可小覷，所以機器學習、神經網路也逐漸成為python科學家必備的基礎知識囉!</h5>
+<p>.<br>
+本篇建構model的方式參考<a href="https://www.finlab.tw/">FinLab部落格</a>，若有侵害著作權，請來信或留言告知，我們將儘速移除相關內容。</p>
 
       </div>
       
@@ -279,21 +418,6 @@
       
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-  <img class="card-img-top rounded-0" src="/images/courses/website.png" alt="如何架設個人網站">
-  <div class="card-body">
-    <ul class="list-inline mb-2">
-      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
-      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Hugo</li>
-    </ul>
-    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/website/">如何架設個人網站</a></h4>
-    <p class="card-text mb-4">Hugo快速架站 &amp; Google服務</p>
-    <a href="https://AlphaFinance.github.io/course/website/" class="btn btn-primary btn-sm">Apply now</a>
-  </div>
-</div>
-      </div>
-      
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card p-0 border-primary rounded-0 hover-shadow">
   <img class="card-img-top rounded-0" src="/images/courses/basis.png" alt="Python快速入門">
   <div class="card-body">
     <ul class="list-inline mb-2">
@@ -318,6 +442,21 @@
     <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/crawler/">Python網頁爬蟲實戰</a></h4>
     <p class="card-text mb-4">認識網頁型態  &amp; 爬蟲技巧大公開</p>
     <a href="https://AlphaFinance.github.io/course/crawler/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/environment.png" alt="建置Python開發環境">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/environment/">建置Python開發環境</a></h4>
+    <p class="card-text mb-4">建立專案環境 &amp; 安裝超實用套件</p>
+    <a href="https://AlphaFinance.github.io/course/environment/" class="btn btn-primary btn-sm">Apply now</a>
   </div>
 </div>
       </div>
