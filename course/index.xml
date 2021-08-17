@@ -7,14 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; AlphaFinance金融科技公司 2021</copyright>
-    <lastBuildDate>Mon, 15 Mar 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://AlphaFinance.github.io/course/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Mar 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://AlphaFinance.github.io/course/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>從GitHub到PYPI</title>
+      <link>https://AlphaFinance.github.io/course/pypi/</link>
+      <pubDate>Wed, 31 Mar 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://AlphaFinance.github.io/course/pypi/</guid>
+      <description>前言 如果你學習Python有一段時間後應該會覺得某些open source的套件功能實在不太順手，於是開始改寫套件，開發完畢後發現:哇!自己根本是天才(大多數時間都會覺得自己根本是廢物啊)! 於是將自己的改寫好的專案上傳到GitHub上，但如果想在其他電腦或colab上安裝自己的套件時要輸入: pip install git+https://github.com/User_Name/User_Repo.git .
+咦!前面課程安裝套件的指令好像沒這麼長欸，以安裝pandas為例，安裝pandas套件是輸入: pip install pandas 大家有看出差異嗎?</description>
+    </item>
+    
     <item>
       <title>人工智慧實戰模型</title>
       <link>https://AlphaFinance.github.io/course/ai/</link>
       <pubDate>Mon, 15 Mar 2021 15:27:17 +0800</pubDate>
       
       <guid>https://AlphaFinance.github.io/course/ai/</guid>
-      <description>前言 大家知道目前金融科技最有潛力的領域是什麼嗎? 沒錯!就是我們常常聽到人工智慧，相較於其他程式語言，最能凸顯出Python與眾不同的特色就在於Machine Learning&amp;amp;Neural Network，在GitHub上有非常多的開發者提供了強大的機器學習函式庫，所以即使我們完全不了解機器學習背後演算法的原理，還是能夠訓練出有用的model哦!  目錄 《一》 《一》AI基礎概念 Artificial Intelligence ➨ Machine Learning ➨ Deep Learning 圖片來源: raboobs EVOLVE</description>
+      <description>前言 大家知道目前金融科技最有潛力的領域是什麼嗎? 沒錯!就是我們常常聽到人工智慧，相較於其他程式語言，最能凸顯出Python與眾不同的特色就在於Machine Learning&amp;amp;Neural Network，在GitHub上有非常多的開發者提供了強大的機器學習函式庫，所以即使我們完全不了解機器學習背後演算法的原理，還是能夠訓練出有用的model哦!  目錄 《一》AI基礎概念《二》Machine Learning (機器學習)《三》Neural Network (神經網路)《四》訓練風險 《一》AI基礎概念 Artificial Intelligence ➨ Machine Learning ➨ Deep Learning 圖片來源: raboobs EVOLVE</description>
     </item>
     
     <item>
