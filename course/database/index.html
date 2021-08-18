@@ -285,7 +285,7 @@
     df<span style="color:#666">.</span>columns <span style="color:#666">=</span> [<span style="color:#4070a0">&#39;stock_id&#39;</span>,<span style="color:#4070a0">&#39;證券名稱&#39;</span>,<span style="color:#4070a0">&#39;收盤價&#39;</span>,<span style="color:#4070a0">&#39;漲跌&#39;</span>,<span style="color:#4070a0">&#39;開盤價&#39;</span>,<span style="color:#4070a0">&#39;最高價&#39;</span>,<span style="color:#4070a0">&#39;最低價&#39;</span>,<span style="color:#4070a0">&#39;成交股數&#39;</span>]
     df <span style="color:#666">=</span> df<span style="color:#666">.</span>set_index(<span style="color:#4070a0">&#39;stock_id&#39;</span>)
     df <span style="color:#666">=</span> df<span style="color:#666">.</span>applymap(<span style="color:#007020;font-weight:bold">lambda</span> s:pd<span style="color:#666">.</span>to_numeric(<span style="color:#007020">str</span>(s)<span style="color:#666">.</span>replace(<span style="color:#4070a0">&#39;,&#39;</span>,<span style="color:#4070a0">&#39;&#39;</span>),errors<span style="color:#666">=</span><span style="color:#4070a0">&#39;coerce&#39;</span>))<span style="color:#666">.</span>dropna(axis<span style="color:#666">=</span><span style="color:#40a070">0</span>,thresh<span style="color:#666">=</span><span style="color:#40a070">5</span>)<span style="color:#666">.</span>dropna(axis<span style="color:#666">=</span><span style="color:#40a070">1</span>,how<span style="color:#666">=</span><span style="color:#4070a0">&#39;all&#39;</span>)[[<span style="color:#4070a0">&#39;收盤價&#39;</span>,<span style="color:#4070a0">&#39;開盤價&#39;</span>,<span style="color:#4070a0">&#39;最高價&#39;</span>,<span style="color:#4070a0">&#39;最低價&#39;</span>,<span style="color:#4070a0">&#39;成交股數&#39;</span>]]
-    df[<span style="color:#4070a0">&#39;date&#39;</span>] <span style="color:#666">=</span> date
+    df[<span style="color:#4070a0">&#39;date&#39;</span>] <span style="color:#666">=</span> pd<span style="color:#666">.</span>to_datetime(date)
     
     time<span style="color:#666">.</span>sleep(random<span style="color:#666">.</span>randint(<span style="color:#40a070">4</span>,<span style="color:#40a070">6</span>))
     
@@ -409,7 +409,7 @@ pd<span style="color:#666">.</span>read_pickle(f<span style="color:#4070a0">&#34
     df<span style="color:#666">.</span>columns <span style="color:#666">=</span> [<span style="color:#4070a0">&#39;stock_id&#39;</span>,<span style="color:#4070a0">&#39;證券名稱&#39;</span>,<span style="color:#4070a0">&#39;收盤價&#39;</span>,<span style="color:#4070a0">&#39;漲跌&#39;</span>,<span style="color:#4070a0">&#39;開盤價&#39;</span>,<span style="color:#4070a0">&#39;最高價&#39;</span>,<span style="color:#4070a0">&#39;最低價&#39;</span>,<span style="color:#4070a0">&#39;成交股數&#39;</span>]
     df <span style="color:#666">=</span> df<span style="color:#666">.</span>set_index(<span style="color:#4070a0">&#39;stock_id&#39;</span>)
     df <span style="color:#666">=</span> df<span style="color:#666">.</span>applymap(<span style="color:#007020;font-weight:bold">lambda</span> s:pd<span style="color:#666">.</span>to_numeric(<span style="color:#007020">str</span>(s)<span style="color:#666">.</span>replace(<span style="color:#4070a0">&#39;,&#39;</span>,<span style="color:#4070a0">&#39;&#39;</span>),errors<span style="color:#666">=</span><span style="color:#4070a0">&#39;coerce&#39;</span>))<span style="color:#666">.</span>dropna(axis<span style="color:#666">=</span><span style="color:#40a070">0</span>,thresh<span style="color:#666">=</span><span style="color:#40a070">5</span>)<span style="color:#666">.</span>dropna(axis<span style="color:#666">=</span><span style="color:#40a070">1</span>,how<span style="color:#666">=</span><span style="color:#4070a0">&#39;all&#39;</span>)[[<span style="color:#4070a0">&#39;收盤價&#39;</span>,<span style="color:#4070a0">&#39;開盤價&#39;</span>,<span style="color:#4070a0">&#39;最高價&#39;</span>,<span style="color:#4070a0">&#39;最低價&#39;</span>,<span style="color:#4070a0">&#39;成交股數&#39;</span>]]
-    df[<span style="color:#4070a0">&#39;date&#39;</span>] <span style="color:#666">=</span> date
+    df[<span style="color:#4070a0">&#39;date&#39;</span>] <span style="color:#666">=</span> pd<span style="color:#666">.</span>to_datetime(date)
     
     time<span style="color:#666">.</span>sleep(random<span style="color:#666">.</span>randint(<span style="color:#40a070">4</span>,<span style="color:#40a070">6</span>))
     
@@ -565,6 +565,21 @@ end_time <span style="color:#666">=</span> time<span style="color:#666">.</span>
       
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/pypi.png" alt="從GitHub到PYPI">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/pypi/">從GitHub到PYPI</a></h4>
+    <p class="card-text mb-4">專案架構 &amp; 套件更新上傳</p>
+    <a href="https://AlphaFinance.github.io/course/pypi/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
   <img class="card-img-top rounded-0" src="/images/courses/crawler.png" alt="Python網頁爬蟲實戰">
   <div class="card-body">
     <ul class="list-inline mb-2">
@@ -589,21 +604,6 @@ end_time <span style="color:#666">=</span> time<span style="color:#666">.</span>
     <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/ai/">人工智慧實戰模型</a></h4>
     <p class="card-text mb-4">機器學習 &amp; 神經網路</p>
     <a href="https://AlphaFinance.github.io/course/ai/" class="btn btn-primary btn-sm">Apply now</a>
-  </div>
-</div>
-      </div>
-      
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card p-0 border-primary rounded-0 hover-shadow">
-  <img class="card-img-top rounded-0" src="/images/courses/website.png" alt="如何架設個人網站">
-  <div class="card-body">
-    <ul class="list-inline mb-2">
-      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
-      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Hugo</li>
-    </ul>
-    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/website/">如何架設個人網站</a></h4>
-    <p class="card-text mb-4">Hugo快速架站 &amp; Google服務</p>
-    <a href="https://AlphaFinance.github.io/course/website/" class="btn btn-primary btn-sm">Apply now</a>
   </div>
 </div>
       </div>
