@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; AlphaFinance金融科技公司 2021</copyright>
-    <lastBuildDate>Wed, 06 Jan 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://AlphaFinance.github.io/notice/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jan 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://AlphaFinance.github.io/notice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alpha_Finance 0.2.7版</title>
+      <link>https://AlphaFinance.github.io/notice/api027/</link>
+      <pubDate>Thu, 07 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://AlphaFinance.github.io/notice/api027/</guid>
+      <description>Installation Install using pip
+pip install Alpha_Finance==0.2.7  Taiwan Stock API Alpha_Finance 為專門分析臺灣股市的Python套件，附帶自動化爬蟲及建立DB</description>
+    </item>
+    
     <item>
       <title>Alpha_Finance 0.2.6版</title>
       <link>https://AlphaFinance.github.io/notice/api-026/</link>
