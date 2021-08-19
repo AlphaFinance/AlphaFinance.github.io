@@ -1,65 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Notice on AlphaFinance | Alpha金融系統</title>
+    <title>API使用說明 on AlphaFinance | Alpha金融系統</title>
     <link>https://AlphaFinance.github.io/notice/</link>
-    <description>Recent content in Notice on AlphaFinance | Alpha金融系統</description>
+    <description>Recent content in API使用說明 on AlphaFinance | Alpha金融系統</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; AlphaFinance金融科技公司 2021</copyright>
-    <lastBuildDate>Sat, 06 Jul 2019 15:27:17 +0600</lastBuildDate><atom:link href="https://AlphaFinance.github.io/notice/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Jan 2021 15:27:17 +0800</lastBuildDate><atom:link href="https://AlphaFinance.github.io/notice/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Teaching Materials and Testing Methods</title>
-      <link>https://AlphaFinance.github.io/notice/notice-1/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
+      <title>Alpha_Finance 0.2.6版</title>
+      <link>https://AlphaFinance.github.io/notice/api-026/</link>
+      <pubDate>Wed, 06 Jan 2021 15:27:17 +0800</pubDate>
       
-      <guid>https://AlphaFinance.github.io/notice/notice-1/</guid>
-      <description>About Notice Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Teaching Materials and Testing Methods</title>
-      <link>https://AlphaFinance.github.io/notice/notice-2/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/notice/notice-2/</guid>
-      <description>About Notice Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Teaching Materials and Testing Methods</title>
-      <link>https://AlphaFinance.github.io/notice/notice-3/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/notice/notice-3/</guid>
-      <description>About Notice Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Teaching Materials and Testing Methods</title>
-      <link>https://AlphaFinance.github.io/notice/notice-4/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/notice/notice-4/</guid>
-      <description>About Notice Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Teaching Materials and Testing Methods</title>
-      <link>https://AlphaFinance.github.io/notice/notice-5/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/notice/notice-5/</guid>
-      <description>About Notice Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Teaching Materials and Testing Methods</title>
-      <link>https://AlphaFinance.github.io/notice/notice-6/</link>
-      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
-      
-      <guid>https://AlphaFinance.github.io/notice/notice-6/</guid>
-      <description>About Notice Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+      <guid>https://AlphaFinance.github.io/notice/api-026/</guid>
+      <description>Installation Install using pip
+pip install Alpha_Finance==0.2.6  Taiwan Stock API Alpha_Finance 為專門分析臺灣股市的Python套件，附帶自動化爬蟲及建立DB</description>
     </item>
     
   </channel>
