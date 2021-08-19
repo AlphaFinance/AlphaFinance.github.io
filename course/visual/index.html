@@ -407,7 +407,7 @@ Line()<span style="color:#666">.</span>load_javascript()
     <span style="color:#666">.</span>add_yaxis(<span style="color:#4070a0">&#39;kline&#39;</span>,s<span style="color:#666">.</span>values<span style="color:#666">.</span>tolist(),itemstyle_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>ItemStyleOpts(color<span style="color:#666">=</span><span style="color:#4070a0">&#34;#f11421&#34;</span>,color0<span style="color:#666">=</span><span style="color:#4070a0">&#34;#34b298&#34;</span>,border_color<span style="color:#666">=</span><span style="color:#4070a0">&#34;#f11421&#34;</span>,border_color0<span style="color:#666">=</span><span style="color:#4070a0">&#39;#34b298&#39;</span>))
     
     <span style="color:#60a0b0;font-style:italic"># 建立多個y軸</span>
-    <span style="color:#666">.</span>extend_axis(yaxis<span style="color:#666">=</span>opts<span style="color:#666">.</span>AxisOpts(<span style="color:#4070a0">&#39;value&#39;</span>,<span style="color:#4070a0">&#39;volume&#39;</span>,max_<span style="color:#666">=</span><span style="color:#007020">round</span>(dfstock<span style="color:#666">.</span>volume<span style="color:#666">.</span>max()<span style="color:#666">*</span><span style="color:#40a070">3</span>)))
+    <span style="color:#666">.</span>extend_axis(yaxis<span style="color:#666">=</span>opts<span style="color:#666">.</span>AxisOpts(<span style="color:#4070a0">&#39;value&#39;</span>,<span style="color:#4070a0">&#39;volume&#39;</span>,max_<span style="color:#666">=</span><span style="color:#007020">round</span>(s<span style="color:#666">.</span>volume<span style="color:#666">.</span>max()<span style="color:#666">*</span><span style="color:#40a070">3</span>)))
     <span style="color:#666">.</span>extend_axis(yaxis<span style="color:#666">=</span>opts<span style="color:#666">.</span>AxisOpts(<span style="color:#4070a0">&#39;value&#39;</span>,<span style="color:#4070a0">&#39;pct&#39;</span>,min_<span style="color:#666">=</span><span style="color:#40a070">0</span>,max_<span style="color:#666">=</span><span style="color:#40a070">5000</span>,offset<span style="color:#666">=</span><span style="color:#40a070">500</span>))
     <span style="color:#666">.</span>set_global_opts(
         title_opts<span style="color:#666">=</span>opts<span style="color:#666">.</span>TitleOpts(stock_id),
@@ -539,30 +539,15 @@ os<span style="color:#666">.</span>remove(<span style="color:#4070a0">&#39;rende
       
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-  <img class="card-img-top rounded-0" src="/images/courses/basis.png" alt="Python快速入門">
+  <img class="card-img-top rounded-0" src="/images/courses/database.png" alt="打造數據資料庫">
   <div class="card-body">
     <ul class="list-inline mb-2">
       <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
       <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
     </ul>
-    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/basis/">Python快速入門</a></h4>
-    <p class="card-text mb-4">Python基礎語法 &amp; Pandas應用</p>
-    <a href="https://AlphaFinance.github.io/course/basis/" class="btn btn-primary btn-sm">Apply now</a>
-  </div>
-</div>
-      </div>
-      
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card p-0 border-primary rounded-0 hover-shadow">
-  <img class="card-img-top rounded-0" src="/images/courses/AI.png" alt="人工智慧實戰模型">
-  <div class="card-body">
-    <ul class="list-inline mb-2">
-      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
-      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
-    </ul>
-    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/ai/">人工智慧實戰模型</a></h4>
-    <p class="card-text mb-4">機器學習 &amp; 神經網路</p>
-    <a href="https://AlphaFinance.github.io/course/ai/" class="btn btn-primary btn-sm">Apply now</a>
+    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/database/">打造數據資料庫</a></h4>
+    <p class="card-text mb-4">認識資料庫 &amp; 多執行緒爬蟲自動化</p>
+    <a href="https://AlphaFinance.github.io/course/database/" class="btn btn-primary btn-sm">Apply now</a>
   </div>
 </div>
       </div>
@@ -578,6 +563,21 @@ os<span style="color:#666">.</span>remove(<span style="color:#4070a0">&#39;rende
     <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/pypi/">從GitHub到PYPI</a></h4>
     <p class="card-text mb-4">專案架構 &amp; 套件更新上傳</p>
     <a href="https://AlphaFinance.github.io/course/pypi/" class="btn btn-primary btn-sm">Apply now</a>
+  </div>
+</div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card p-0 border-primary rounded-0 hover-shadow">
+  <img class="card-img-top rounded-0" src="/images/courses/AI.png" alt="人工智慧實戰模型">
+  <div class="card-body">
+    <ul class="list-inline mb-2">
+      <li class="list-inline-item"><i class="ti-calendar"></i> 06 Month</li>
+      <li class="list-inline-item"><i class="ti-bookmark-alt"></i> Python</li>
+    </ul>
+    <h4 class="card-title"><a href="https://AlphaFinance.github.io/course/ai/">人工智慧實戰模型</a></h4>
+    <p class="card-text mb-4">機器學習 &amp; 神經網路</p>
+    <a href="https://AlphaFinance.github.io/course/ai/" class="btn btn-primary btn-sm">Apply now</a>
   </div>
 </div>
       </div>
