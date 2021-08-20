@@ -132,13 +132,24 @@
     </item>
     
     <item>
+      <title>Alpha_Finance 0.3.0版</title>
+      <link>https://AlphaFinance.github.io/notice/api-030/</link>
+      <pubDate>Sun, 10 Jan 2021 15:27:17 +0800</pubDate>
+      
+      <guid>https://AlphaFinance.github.io/notice/api-030/</guid>
+      <description>Installation Install using pip
+pip install Alpha_Finance==0.3.0  本地端環境
+安裝talib並儲存至user  pip install TA_Lib-0.</description>
+    </item>
+    
+    <item>
       <title>Alpha_Finance 0.2.9版</title>
       <link>https://AlphaFinance.github.io/notice/api-029/</link>
       <pubDate>Sat, 09 Jan 2021 15:27:17 +0800</pubDate>
       
       <guid>https://AlphaFinance.github.io/notice/api-029/</guid>
       <description>Installation Install using pip
-pip install Alpha_Finance  本地端環境
+pip install Alpha_Finance==0.2.9  本地端環境
 安裝talib並儲存至user  pip install TA_Lib-0.</description>
     </item>
     
