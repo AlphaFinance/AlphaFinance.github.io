@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Alpha_Finance 0.2.9版</title>
+  <title>Alpha_Finance 0.3.2版</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -143,7 +143,7 @@
         <ul class="list-inline custom-breadcrumb">
           <li class="list-inline-item h2"><a class="text-primary font-secondary" href="https://AlphaFinance.github.io">Home</a></li>
           <li class="list-inline-item h5"><i class="ti-angle-right text-white"></i></li>
-          <li class="list-inline-item text-white h3 font-secondary">Alpha_Finance 0.2.9版</li>
+          <li class="list-inline-item text-white h3 font-secondary">Alpha_Finance 0.3.2版</li>
         </ul>
         <p class="text-lighten">API用於財務教育、非商業用途。資料僅供參考，使用者依本資料交易發生之損失需自行負責。</p>
       </div>
@@ -167,7 +167,7 @@
           <div class="content">
             <h2 id="installation">Installation</h2>
 <p>Install using pip</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install Alpha_Finance<span style="color:#666">==</span><span style="color:#40a070">0.2</span><span style="color:#666">.</span><span style="color:#40a070">9</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install Alpha_Finance<span style="color:#666">==</span><span style="color:#40a070">0.3</span><span style="color:#666">.</span><span style="color:#40a070">2</span>
 </code></pre></div><ul>
 <li>本地端環境<br>
 <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib">安裝talib</a>並儲存至user</li>
@@ -376,6 +376,60 @@ technical_chart(dfstock,stock_id)
 </tbody>
 </table>
 <p><img src="/images/technical_chart.png" alt=""></p>
+<h4 id="技術指標">技術指標</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">Alpha_Finance</span> <span style="color:#007020;font-weight:bold">import</span> indicator
+
+indicator<span style="color:#666">.</span>RSI(dfstock)
+</code></pre></div><table>
+<thead>
+<tr>
+<th>date</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2021-08-13</td>
+<td>42.373579</td>
+</tr>
+<tr>
+<td>2021-08-16</td>
+<td>42.373579</td>
+</tr>
+<tr>
+<td>2021-08-17</td>
+<td>40.643127</td>
+</tr>
+<tr>
+<td>2021-08-18</td>
+<td>46.256672</td>
+</tr>
+<tr>
+<td>2021-08-19</td>
+<td>42.602784</td>
+</tr>
+</tbody>
+</table>
+<h4 id="個股回測">個股回測</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">Alpha_Finance.backtest</span> <span style="color:#007020;font-weight:bold">import</span> backtest_single_stock
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">Alpha_Finance.stock</span> <span style="color:#007020;font-weight:bold">import</span> stock_dataframe
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span>
+
+stock_id <span style="color:#666">=</span> <span style="color:#4070a0">&#39;0050&#39;</span>
+dfstock <span style="color:#666">=</span> stock_dataframe(stock_id)
+
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">ma</span>(n):
+    <span style="color:#007020;font-weight:bold">return</span> dfstock<span style="color:#666">.</span>close<span style="color:#666">.</span>rolling(n,min_periods<span style="color:#666">=</span><span style="color:#40a070">1</span>)<span style="color:#666">.</span>mean()
+
+entry <span style="color:#666">=</span> (ma(<span style="color:#40a070">5</span>)<span style="color:#666">&gt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">5</span>)<span style="color:#666">.</span>shift()<span style="color:#666">&lt;</span>ma(<span style="color:#40a070">60</span>)<span style="color:#666">.</span>shift())
+<span style="color:#007020">exit</span> <span style="color:#666">=</span> (ma(<span style="color:#40a070">5</span>)<span style="color:#666">&lt;=</span>ma(<span style="color:#40a070">60</span>))<span style="color:#666">&amp;</span>(ma(<span style="color:#40a070">5</span>)<span style="color:#666">.</span>shift()<span style="color:#666">&gt;</span>ma(<span style="color:#40a070">60</span>)<span style="color:#666">.</span>shift())
+start_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2014</span>,<span style="color:#40a070">5</span>,<span style="color:#40a070">5</span>)
+end_date <span style="color:#666">=</span> datetime<span style="color:#666">.</span>date(<span style="color:#40a070">2021</span>,<span style="color:#40a070">8</span>,<span style="color:#40a070">23</span>)
+
+backtest_single_stock(dfstock,stock_id,entry,<span style="color:#007020">exit</span>,start_date,end_date)
+</code></pre></div><p><img src="/images/backtest_chart.png" alt=""><br>
+<img src="/images/backtest_roi.png" alt=""><br>
+<img src="/images/backtest_log.png" alt=""></p>
 <hr>
 <h2 id="contact">Contact</h2>
 <h5 id="網站-httpsalphafinancegithubio">網站: <a href="https://alphafinance.github.io/">https://alphafinance.github.io/</a></h5>
